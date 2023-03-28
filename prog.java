@@ -6,7 +6,6 @@ public class prog {
 
     public static void main(String[] args) {
         System.out.println("1. task1\n2. task2\n3. task3");
-        Scanner scanread = new Scanner(System.in);
         int choose = scanread.nextInt();
         if (choose == 1) {
             task1();
@@ -21,7 +20,6 @@ public class prog {
     }
 
     static void task1() {
-        // Scanner scanread = new Scanner(System.in);
         System.out.println("Input two nums <1000 to qube: ");
         int elemTake1 = scanread.nextInt();
         int elemTake2 = scanread.nextInt();
@@ -37,7 +35,6 @@ public class prog {
 
     static void task2() {
         System.out.println("Input");
-        // Scanner scanread = new Scanner(System.in);
         int n = scanread.nextInt();
         int arr[] = new int[n];
         for(int i = 0; i < n; i++) {
@@ -55,7 +52,6 @@ public class prog {
 
     static int task3_plus(int plussee) {
         System.out.println("На какое число?");
-        // Scanner scanread = new Scanner(System.in);
         int plusser = scanread.nextInt();
         int res = plussee + plusser;
         return res;
@@ -63,20 +59,17 @@ public class prog {
 
     static int task3_minus(int minussee) {
         System.out.println("На какое число?");
-        // Scanner scanread = new Scanner(System.in);
         int minusser = scanread.nextInt();
         return minussee - minusser;
     }
 
     static int task3_multiply(int multiplee) {
         System.out.println("На какое число?");
-        // Scanner scanread = new Scanner(System.in);
         int multipler = scanread.nextInt();
         return multiplee * multipler;
     }
 
     static void task3() {
-        // Scanner scanread = new Scanner(System.in);
         System.out.println("\nКалькулятор\n\nВведите целое число");
         int num1 = scanread.nextInt();
         boolean wait = true;
