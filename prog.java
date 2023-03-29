@@ -17,9 +17,9 @@ public class prog {
             if (choice == 1) {
                 seminar1();
             }
-            // if (choice == 2) {
-            //     seminar2();
-            // }
+            if (choice == 2) {
+                seminar2();
+            }
         }
 
     }
@@ -119,20 +119,56 @@ public class prog {
     static void seminar2() {
         boolean waiting = true;
         while (waiting) {
-            System.out.println("\n\nДз второго семинара\n0. exit\n1. task1\n2. task2\n3. task3");
+            System.out.println("\n\nДз второго семинара\n0. exit\n1. task0\n2. task1");
             int choose = scanread.nextInt();
             if (choose == 0) {
                 waiting = false;
             }
             if (choose == 1) {
-                // task1();
+                task1_sem2();
             }
             if (choose == 2) {
-                // task2();
-            }
-            if (choose == 3) {
-                // task3();
+                task2_sem2();
             }
         }
+    }
+
+    // Посчитайте сколько драгоценных камней в куче обычных камней
+    // Пример:
+    // jewels = “aB”, stones = “aaaAbbbB”
+    // Результат в консоль ”a3B1”
+    static void task1_sem2() {
+        StringBuffer sb = new StringBuffer();
+        String jewels = "aB"; char[] eachJewel = jewels.toCharArray();
+        String stones = "aaaAbbbB"; char[] eachStone = stones.toCharArray();
+        int count = 0; String res = "";
+
+        for (char aJewel : eachJewel) {
+            count = 0;
+            count = looker_sem2(aJewel, eachStone);
+            // res = res + aJewel + count;
+            res = sb.append(aJewel + "" + count).toString();
+        }
+
+        System.out.println(res);
+    }
+
+    static int looker_sem2(char aPiece, char[] lookie) {
+        int count = 0;
+        for (char c : lookie) {
+            if (c == aPiece) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    // Вам дается строка S и целочисленный массив индексов int index[s.length].
+    // Напишите программу, которая перетасует символы в S таким образом,
+    // что символ c i-й позиции переместится на индекс index[i] в результирующей строке.
+    
+    // Пример: s = “cba”, index = [3,2,1] result “abc”
+    static void task2_sem2() {
+        System.out.println("t2s2");
     }
 }
