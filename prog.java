@@ -5,21 +5,46 @@ public class prog {
     private static final Scanner scanread = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("1. task1\n2. task2\n3. task3");
-        int choose = scanread.nextInt();
-        if (choose == 1) {
-            task1();
+
+        // prettify
+        boolean waiting = true;
+        while (waiting) {
+            System.out.println("\n\nСеминары\n0. Выход\n1. дз первого семинара\n2. дз второго семинара");
+            int choice = scanread.nextInt();
+            if (choice == 0) {
+                waiting = false;
+            }
+            if (choice == 1) {
+                seminar1();
+            }
+            // if (choice == 2) {
+            //     seminar2();
+            // }
         }
-        if (choose == 2) {
-            task2();
+
+    }
+    
+    static void seminar1() {
+        boolean waiting = true;
+        while (waiting) {
+            System.out.println("\n\nДз первого семинара\n0. exit\n1. task1\n2. task2\n3. task3");
+            int choose = scanread.nextInt();
+            if (choose == 0) {
+                waiting = false;
+            }
+            if (choose == 1) {
+                task1_sem1();
+            }
+            if (choose == 2) {
+                task2_sem1();
+            }
+            if (choose == 3) {
+                task3_sem1();
+            }
         }
-        if (choose == 3) {
-            task3();
-        }
-        scanread.close();
     }
 
-    static void task1() {
+    static void task1_sem1() {
         System.out.println("Input two nums <1000 to qube: ");
         int elemTake1 = scanread.nextInt();
         int elemTake2 = scanread.nextInt();
@@ -30,10 +55,9 @@ public class prog {
         System.out.println("Output");
         System.out.println(arr[elemTake1]);
         System.out.println(arr[elemTake2]);
-        scanread.close();
     }
 
-    static void task2() {
+    static void task2_sem1() {
         System.out.println("Input");
         int n = scanread.nextInt();
         int arr[] = new int[n];
@@ -47,29 +71,28 @@ public class prog {
             arr[i] = arr[i] * multiply;
             System.out.println(arr[i]);
         }
-        scanread.close();
     }
 
-    static int task3_plus(int plussee) {
+    static int task3_plus_sem1(int plussee) {
         System.out.println("На какое число?");
         int plusser = scanread.nextInt();
         int res = plussee + plusser;
         return res;
     }
 
-    static int task3_minus(int minussee) {
+    static int task3_minus_sem1(int minussee) {
         System.out.println("На какое число?");
         int minusser = scanread.nextInt();
         return minussee - minusser;
     }
 
-    static int task3_multiply(int multiplee) {
+    static int task3_multiply_sem1(int multiplee) {
         System.out.println("На какое число?");
         int multipler = scanread.nextInt();
         return multiplee * multipler;
     }
 
-    static void task3() {
+    static void task3_sem1() {
         System.out.println("\nКалькулятор\n\nВведите целое число");
         int num1 = scanread.nextInt();
         boolean wait = true;
@@ -78,18 +101,37 @@ public class prog {
             int choice = scanread.nextInt();
 
             if (choice == 1) {
-                num1 = task3_plus(num1);
+                num1 = task3_plus_sem1(num1);
             }
             if (choice == 2) {
-                num1 = task3_minus(num1);
+                num1 = task3_minus_sem1(num1);
             }
             if (choice == 3) {
                 System.out.println("Результат: " + num1);
-                scanread.close();
                 wait = false;
             }
             if (choice == 4) {
-                num1 = task3_multiply(num1);
+                num1 = task3_multiply_sem1(num1);
+            }
+        }
+    }
+
+    static void seminar2() {
+        boolean waiting = true;
+        while (waiting) {
+            System.out.println("\n\nДз второго семинара\n0. exit\n1. task1\n2. task2\n3. task3");
+            int choose = scanread.nextInt();
+            if (choose == 0) {
+                waiting = false;
+            }
+            if (choose == 1) {
+                // task1();
+            }
+            if (choose == 2) {
+                // task2();
+            }
+            if (choose == 3) {
+                // task3();
             }
         }
     }
