@@ -138,7 +138,7 @@ public class prog {
     // jewels = “aB”, stones = “aaaAbbbB”
     // Результат в консоль ”a3B1”
     static void task1_sem2() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         String jewels = "aB"; char[] eachJewel = jewels.toCharArray();
         String stones = "aaaAbbbB"; char[] eachStone = stones.toCharArray();
         int count = 0; String res = "";
@@ -169,6 +169,15 @@ public class prog {
     
     // Пример: s = “cba”, index = [3,2,1] result “abc”
     static void task2_sem2() {
-        System.out.println("t2s2");
+        StringBuilder sb = new StringBuilder();
+        String s = "cba";
+        int[] index = new int[] {3, 2, 1};
+        String res = "";
+
+        for (int i : index) {
+            res = sb.append(s.charAt(i - 1)).toString();
+        }
+
+        System.out.println(res);
     }
 }
