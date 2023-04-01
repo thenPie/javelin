@@ -119,7 +119,7 @@ public class prog {
     static void seminar2() {
         boolean waiting = true;
         while (waiting) {
-            System.out.println("\n\nДз второго семинара\n0. exit\n1. task0\n2. task1");
+            System.out.println("\n\nДз второго семинара\n0. exit\n1. task0\n2. task1\n3. task2");
             int choose = scanread.nextInt();
             if (choose == 0) {
                 waiting = false;
@@ -129,6 +129,9 @@ public class prog {
             }
             if (choose == 2) {
                 task2_sem2();
+            }
+            if (choose == 3) {
+                task3_sem2();
             }
         }
     }
@@ -146,7 +149,6 @@ public class prog {
         for (char aJewel : eachJewel) {
             count = 0;
             count = looker_sem2(aJewel, eachStone);
-            // res = res + aJewel + count;
             res = sb.append(aJewel + "" + count).toString();
         }
 
@@ -166,7 +168,6 @@ public class prog {
     // Вам дается строка S и целочисленный массив индексов int index[s.length].
     // Напишите программу, которая перетасует символы в S таким образом,
     // что символ c i-й позиции переместится на индекс index[i] в результирующей строке.
-    
     // Пример: s = “cba”, index = [3,2,1] result “abc”
     static void task2_sem2() {
         StringBuilder sb = new StringBuilder();
@@ -179,5 +180,52 @@ public class prog {
         }
 
         System.out.println(res);
+    }
+
+    // Task_2
+    // На первой строке записывается натуральное число n - количество строчек в книге. Затем вводится n строк - строки книги. потом вводится натуральное число m - количество продуктов, на которые у человека аллергия. Потом вводится m строк - вида "продукт1 - продукт2", где продукт1 - продукт, на который у человека аллергия и продукт2 - продукт, на который следует заменить продукт1. Гарантируется что любой продукт состоит из 1 слова. название продуктов написаны строчными буквами. Гарантируется, что продукты, на которые нужно выполнить замену, не встречаются изначально в тексте.
+    // Выходные данные
+    // Замените все продукты в поваренной книге Васи и выведите их построчно на экран. На окончания не обращайте внимание. ВАЖНО!!! Если продукт, который следует заменить написан с большой буквы, то и замена тоже должна начинаться с большой буквы!
+    // Sample Input:
+    // 2
+    // Рецепт 1. Арахис 100гр, мороженое 200гр. Возьмите арахис и измелчите его. Посыпьте измельчённый арахис на мороженое.
+    // Рецепт 2. Клубника 100гр, сгущенка 3кг. Смешать, есть) Радоваться жизни.
+    // 3
+    // арахис - колбаса
+    // клубника - вишня
+    // сгущенка - молоко
+    // Sample Output:
+    // Рецепт 1. Колбаса 100гр, мороженое 200гр. Возьмите колбаса и измелчите его. Посыпьте измельчённый колбаса на мороженое.
+    // Рецепт 2. Вишня 100гр, молоко 3кг. Смешать, есть) Радоваться жизни.
+    static void task3_sem2() {
+        System.out.println("Введите количество строк рецепта");
+        int n = scanread.nextInt();
+        String recipe = task3_sem2_recipe(n);
+        System.out.println("Введите количество аллергий на продукты");
+        int m = scanread.nextInt();
+        String arg = task3_sem2_allerg(m);
+        System.out.println(recipe);
+    }
+    
+    static String task3_sem2_recipe(int n) {
+        StringBuilder sb = new StringBuilder();
+        String recipe = "";
+        System.out.println("Вводите рецепт построчно");
+        for (int i = 0; i <= n; i++) {
+            String aLine = scanread.nextLine();
+            recipe = sb.append(aLine).append("\n").toString();
+        }
+        return recipe;
+    }
+    
+    static String task3_sem2_allerg(int m) {
+        StringBuilder sb = new StringBuilder();
+        System.out.println("Введите на что аллергия и чем его можно заменить в формате: продукт1 - продукт2");
+        String rec = "";
+        for (int j = 0; j <= m; j++) {
+            String arg = scanread.nextLine();
+            rec = sb.append(arg).append("\n").toString();
+        }
+        return rec;
     }
 }
