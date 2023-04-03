@@ -197,35 +197,77 @@ public class prog {
     // Sample Output:
     // Рецепт 1. Колбаса 100гр, мороженое 200гр. Возьмите колбаса и измелчите его. Посыпьте измельчённый колбаса на мороженое.
     // Рецепт 2. Вишня 100гр, молоко 3кг. Смешать, есть) Радоваться жизни.
+
+    // не успел
+    // static void task3_sem2() {
+    //     System.out.println("Введите количество строк рецепта");
+    //     int n = scanread.nextInt();
+    //     String recipe = task3_sem2_recipe(n);
+    //     System.out.println("Введите количество аллергий на продукты");
+    //     int m = scanread.nextInt();
+    //     String arg = task3_sem2_allerg(m);
+    //     System.out.println(arg);
+    // }
+    
+    // static String task3_sem2_recipe(int n) {
+    //     StringBuilder sb = new StringBuilder();
+    //     String recipe = "";
+    //     System.out.println("Вводите рецепт построчно");
+    //     for (int i = 0; i <= n; i++) {
+    //         String aLine = scanread.nextLine();
+    //         recipe = sb.append(aLine).append("\n").toString();
+    //     }
+    //     return recipe;
+    // }
+    
+    // static String task3_sem2_allerg(int m) {
+    //     StringBuilder sb = new StringBuilder();
+    //     System.out.println("Введите на что аллергия и чем его можно заменить в формате: продукт1 - продукт2");
+    //     String rec = "";
+    //     for (int j = 0; j <= m; j++) {
+    //         String arg = scanread.nextLine();
+    //         rec = sb.append(arg).append("\n").toString();
+    //     }
+    //     return rec;
+    // }
+
     static void task3_sem2() {
-        System.out.println("Введите количество строк рецепта");
-        int n = scanread.nextInt();
-        String recipe = task3_sem2_recipe(n);
-        System.out.println("Введите количество аллергий на продукты");
-        int m = scanread.nextInt();
-        String arg = task3_sem2_allerg(m);
-        System.out.println(recipe);
-    }
-    
-    static String task3_sem2_recipe(int n) {
-        StringBuilder sb = new StringBuilder();
-        String recipe = "";
-        System.out.println("Вводите рецепт построчно");
-        for (int i = 0; i <= n; i++) {
-            String aLine = scanread.nextLine();
-            recipe = sb.append(aLine).append("\n").toString();
+        int n = 2;
+        int m = 3;
+
+        String[] receipts   = new String[n];
+        String[] components = new String[m];
+
+        receipts[0] = "Рецепт 1. Арахис 100гр, мороженое 200гр. Возьмите арахис и измелчите его. Посыпьте измельчённый арахис на мороженое.";
+        receipts[1] = "Рецепт 2. Клубника 100гр, сгущенка 3кг. Смешать, есть) Радоваться жизни.";
+
+        components[0] = "арахис - колбаса";
+        components[1] = "клубника - вишня";
+        components[2] = "сгущенка - молоко";
+
+        String target = "";
+        String replmt = "";
+
+        for (String component : components) {
+            target = component.substring(0, component.indexOf(" -"));
+            replmt = component.substring(component.indexOf("- ")+2);
+
+            for (String receipt : receipts) {
+                String newReceipt = receipt;
+                String[] words = receipt.split("\\s");
+                for (String word : words) {
+                    StringBuilder replmnt2 = new StringBuilder(replmt);
+                    if (word.compareToIgnoreCase(target) == 0) {
+                        if (Character.isUpperCase(word.charAt(0))) replmnt2.setCharAt(0, Character.toUpperCase(replmnt2.charAt(0)));
+                        newReceipt = newReceipt.replace(word, replmnt2);
+                    }
+                }
+                receipts[java.util.Arrays.asList(receipts).indexOf(receipt)] = newReceipt;
+            }
         }
-        return recipe;
-    }
-    
-    static String task3_sem2_allerg(int m) {
-        StringBuilder sb = new StringBuilder();
-        System.out.println("Введите на что аллергия и чем его можно заменить в формате: продукт1 - продукт2");
-        String rec = "";
-        for (int j = 0; j <= m; j++) {
-            String arg = scanread.nextLine();
-            rec = sb.append(arg).append("\n").toString();
+
+        for (String receipt : receipts) {
+            System.out.println(receipt);
         }
-        return rec;
     }
 }
