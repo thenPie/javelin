@@ -2,7 +2,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
-public class task1 {
+public class task3 {
 
     static boolean isPalindrom(Deque<Integer> deque) {
         while (deque.size() > 1 ) {
