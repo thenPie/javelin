@@ -6,10 +6,10 @@ public class Product extends HotDrink {
 
     @Override
     public String toString() {
-        return "HotDrink {" +
-               "feels = " + feels + "," + "\n" +
+        return "Product {" +
                "temp = " + temp +
-               "}";
+               "}" + "\n" +
+               super.toString();
     }
 
 }
