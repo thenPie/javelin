@@ -54,14 +54,46 @@ public class Robot {
      * @param level - задаёт уровень роботу.
      */
     public Robot(String name, Integer level) {
-        this.name = name;
+        if ((name.isEmpty() || Character.isDigit(name.charAt(0))) || Robot.names.indexOf(name) != -1) {
+            this.name = String.format("DefaultName_%d", defIndex++);
+        } else {
+            this.name = name;
+        }
+
+        Robot.names.add(this.name);
         this.level = level;
+        this.state = State.off;
+
+    }
+
+    // Правильные конструкторы, don't repeat yourself
+    
+    public Robot(String name) {
+        this(name, 1);
+    }
+
+    public Robot() {
+        this("");
+    }
+
+    /**
+     * Метод вкл/выкл робота
+     */
+    public void power() {
+        if (this.state == state.off) {
+            this.powerON();
+            this.state = State.on;
+        } else {
+            this.powerOFF();
+            this.state = State.off;
+            System.out.println();
+        }
     }
 
     /**
      * Включает робота.
      */
-    public void powerON() {
+    private void powerON() {
         startBIOS();
         startOS();
     }
@@ -69,7 +101,7 @@ public class Robot {
     /**
      * Выключает робота.
      */
-    public void powerOFF() {
+    private void powerOFF() {
         finishOS();
         finishBIOS();
     }
@@ -103,10 +135,17 @@ public class Robot {
     }
 
     /**
-     * Робот работает
+     * Выполнение работы роботом.
      */
     public void work() {
-        System.out.println("Working...");
+        if (this.state == State.on) {
+            System.out.println("Working...");
+        }
+    }
+    
+    @Override
+    public String toString() {
+        return name + " " + level;
     }
 
 }
