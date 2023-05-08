@@ -29,6 +29,9 @@ public class App {
         magnit.acceptToMarket(item2);
         magnit.acceptToMarket(item3);
         magnit.update();
+        magnit.returnOrder(item2);
+        magnit.returnOrder(item2);
+        magnit.returnOrder(item3);
 
     }
 }

@@ -2,7 +2,6 @@
 package Classes;
 
 import Interfaces.iActorBehaviour;
-import Interfaces.iReturnOrder;
 
 /**
  * Абстрактный класс о клиенте.
@@ -26,7 +25,7 @@ public abstract class Actor implements iActorBehaviour {
     public Actor(String name) {
         this.name = name;
         this.isMakeOrder = true; // временное
-        // this.isTakeOrder = true; // временное
+        this.isTakeOrder = true; // временное
     }
 
     public abstract String getName();

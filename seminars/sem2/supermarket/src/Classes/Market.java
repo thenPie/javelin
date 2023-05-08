@@ -51,7 +51,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     public void update() {
         takeOrder();
         giveOrder();
-        releaseFromQueue();
+        // releaseFromQueue();
     }
 
     @Override
@@ -93,7 +93,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
 
     @Override
     public void cashReturn() {
-        System.out.println("Order has been refunded.");
+        System.out.println("Order has been refunded");
     }
 
     @Override
@@ -104,13 +104,12 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     @Override
     public void returnOrder(iActorBehaviour actor) {
         if (actor.isTakeOrder()) {
+            actor.setTakeOrder(false);
             acceptReturn();
             cashReturn();
         } else {
             denyReturn();
         }
     }
-
-    
 
 }
