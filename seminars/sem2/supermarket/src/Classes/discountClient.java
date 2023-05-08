@@ -9,6 +9,10 @@ public class discountClient extends Actor {
         this.discount = discount;
     }
 
+    public Integer getDiscount() {
+        return discount;
+    }
+
     @Override
     public String getName() {
         return super.name;

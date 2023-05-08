@@ -6,6 +6,11 @@ package Interfaces;
 public interface iReturnOrder {
 
     /**
+     * Инициализация возврата товара.
+     */
+    void returnOrder(iActorBehaviour actor);
+
+    /**
      * Метод возврата товара.
      */
     void acceptReturn();
@@ -14,11 +19,6 @@ public interface iReturnOrder {
      * Метод непройденного возврата товара.
      */
     void denyReturn();
-
-    /**
-     * Метод замены товара.
-     */
-    void changeOrderReturn();
 
     /**
      * Метод возврата денежных средств.

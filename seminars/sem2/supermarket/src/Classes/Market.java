@@ -6,11 +6,12 @@ import java.util.List;
 import Interfaces.iActorBehaviour;
 import Interfaces.iMarketBehaviour;
 import Interfaces.iQueueBehaviour;
+import Interfaces.iReturnOrder;
 
 /**
  * Класс магазина.
  */
-public class Market implements iMarketBehaviour, iQueueBehaviour {
+public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     
     // private List<Actor> queue;
 
@@ -84,5 +85,32 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
             }
         }
     }
+
+    @Override
+    public void acceptReturn() {
+        System.out.println("Order has been returned");
+    }
+
+    @Override
+    public void cashReturn() {
+        System.out.println("Order has been refunded.");
+    }
+
+    @Override
+    public void denyReturn() {
+        System.out.println("Order return was denied");
+    }
+
+    @Override
+    public void returnOrder(iActorBehaviour actor) {
+        if (actor.isTakeOrder()) {
+            acceptReturn();
+            cashReturn();
+        } else {
+            denyReturn();
+        }
+    }
+
+    
 
 }

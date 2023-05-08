@@ -41,7 +41,5 @@ public class OrdinaryClient extends Actor {
     public Actor getActor() {
         return this;
     }
-
-    
     
 }

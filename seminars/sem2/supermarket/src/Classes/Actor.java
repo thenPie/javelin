@@ -7,7 +7,7 @@ import Interfaces.iReturnOrder;
 /**
  * Абстрактный класс о клиенте.
  */
-public abstract class Actor implements iActorBehaviour, iReturnOrder {
+public abstract class Actor implements iActorBehaviour {
 
     /**
      * Информация клиента.
