@@ -12,10 +12,10 @@ public class OrdinaryClient extends Actor {
         return super.name;
     }
 
-    @Override
-    public Integer getIdVIP() {
-        return super.idVIP;
-    }
+    // @Override
+    // public Integer getIdVIP() {
+    //     return super.idVIP;
+    // }
 
     @Override
     public Boolean isMakeOrder() {
@@ -36,5 +36,12 @@ public class OrdinaryClient extends Actor {
     public void setTakeOrder(Boolean pickupOrder) {
         super.isTakeOrder = pickupOrder;
     }
+
+    @Override
+    public Actor getActor() {
+        return this;
+    }
+
+    
     
 }

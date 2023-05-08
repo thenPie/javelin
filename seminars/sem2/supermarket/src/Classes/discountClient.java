@@ -1,13 +1,12 @@
-
 package Classes;
 
-public class SpecialClient extends Actor {
+public class discountClient extends Actor {
 
-    private Integer idVIP;
+    private Integer discount;
 
-    public SpecialClient(String name, Integer idVIP) {
+    public discountClient(String name, Integer discount) {
         super(name);
-        this.idVIP = idVIP;
+        this.discount = discount;
     }
 
     @Override
@@ -15,8 +14,9 @@ public class SpecialClient extends Actor {
         return super.name;
     }
 
-    public Integer getIdVIP() {
-        return idVIP;
+    @Override
+    public Actor getActor() {
+        return this;
     }
 
     @Override
@@ -37,11 +37,6 @@ public class SpecialClient extends Actor {
     @Override
     public void setTakeOrder(Boolean pickupOrder) {
         super.isTakeOrder = pickupOrder;
-    }
-
-    @Override
-    public Actor getActor() {
-        return this;
     }
 
 }
