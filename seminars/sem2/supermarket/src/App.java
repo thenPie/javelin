@@ -4,8 +4,6 @@ import Classes.SpecialClient;
 import Classes.discountClient;
 import Interfaces.iActorBehaviour;
 
-//добавить одного вип клиента, добавить ещё один интерфейс для очереди
-
 public class App {
     public static void main(String[] args) throws Exception {
         

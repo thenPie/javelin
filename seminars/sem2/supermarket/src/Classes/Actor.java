@@ -15,9 +15,6 @@ public abstract class Actor implements iActorBehaviour {
     protected Boolean isMakeOrder;
     protected Boolean isTakeOrder;
 
-    // Boolean isMakeOrder();
-    // Boolean isTakeOrder();
-
     /**
      * Инициализация клиента.
      * @param name

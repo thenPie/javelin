@@ -14,7 +14,7 @@ public interface iActorBehaviour {
     void setMakeOrder(Boolean makeOrder);
 
     /**
-     * Выдан ли заказ.
+     * Установить статус заказа.
      * @param pickupOrder
      */
     void setTakeOrder(Boolean pickupOrder);

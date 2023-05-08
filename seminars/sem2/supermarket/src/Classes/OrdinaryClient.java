@@ -12,11 +12,6 @@ public class OrdinaryClient extends Actor {
         return super.name;
     }
 
-    // @Override
-    // public Integer getIdVIP() {
-    //     return super.idVIP;
-    // }
-
     @Override
     public Boolean isMakeOrder() {
         return super.isMakeOrder;
