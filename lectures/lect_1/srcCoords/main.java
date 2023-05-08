@@ -1,5 +1,5 @@
 
-package src;
+package srcCoords;
 
 public class main {
 
