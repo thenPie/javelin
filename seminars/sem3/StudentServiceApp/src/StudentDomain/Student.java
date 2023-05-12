@@ -64,6 +64,8 @@ public class Student extends User implements Comparable<Student> {
         // }
         // return 1;
 
+        // System.out.println(super.getFirstName() + " --- " + student.getFirstName());
+
         if (super.getAge() == student.getAge()) {
             if (this.getId() == student.getId()) {
                 return 0;

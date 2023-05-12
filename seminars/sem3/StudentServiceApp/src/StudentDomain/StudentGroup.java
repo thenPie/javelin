@@ -3,7 +3,7 @@ package StudentDomain;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
     
     private List<Student> students;
     
@@ -44,6 +44,20 @@ public class StudentGroup implements Iterable<Student> {
             }
 
         };
+    }
+
+    @Override
+    public int compareTo(StudentGroup o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+
+        // if (condition) {
+        //     return 0;
+        // }
+        // if (condition) {
+        //     return -1;
+        // }
+        // return 1;
     }
 
 }
