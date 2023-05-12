@@ -1,12 +1,9 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import StudentDomain.Student;
 import StudentDomain.StudentGroup;
-import StudentDomain.Teacher;
-import StudentDomain.User;
 
 public class App {
     public static void main(String[] args) throws Exception {
