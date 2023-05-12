@@ -23,17 +23,17 @@ public class App {
         List<Student> lStudents3 = new ArrayList<Student>();
         
         lStudents1.add(st1);
-        lStudents3.add(st2);
-        lStudents3.add(st3);
-        lStudents2.add(st4);
-        lStudents2.add(st5);
+        lStudents1.add(st2);
+        lStudents1.add(st3);
+        lStudents1.add(st4);
+        lStudents1.add(st5);
         lStudents2.add(st6);
         lStudents3.add(st7);
         lStudents3.add(st8);
 
-        StudentGroup gr1 = new StudentGroup(lStudents1);
-        StudentGroup gr2 = new StudentGroup(lStudents2);
-        StudentGroup gr3 = new StudentGroup(lStudents3);
+        StudentGroup gr1 = new StudentGroup(lStudents1, "1group1");
+        StudentGroup gr2 = new StudentGroup(lStudents2, "2group2");
+        StudentGroup gr3 = new StudentGroup(lStudents3, "3group3");
 
         List<StudentGroup> grs = new ArrayList<StudentGroup>();
         grs.add(gr1);
@@ -41,17 +41,30 @@ public class App {
         grs.add(gr3);
 
         StudentSteam steam1 = new StudentSteam(grs);
+        
+        for (StudentGroup studentGroup : steam1) {
+            System.out.println("=================================================================" + studentGroup.getName());
+            for (Student student : studentGroup) {
+                System.out.println(student);
+            }
+        }
+
+        System.out.println();
+        Collections.sort(steam1.getSteam());
 
         for (StudentGroup studentGroup : steam1) {
-            System.out.println("=================================================================");
+            System.out.println("=================================================================" + studentGroup.getName());
             for (Student student : studentGroup) {
                 System.out.println(student);
             }
         }
         
-        for (StudentGroup studentGroup : steam1) {
-            Collections.sort(studentGroup.getStudents());
-        }
+        // for (StudentGroup studentGroup : steam1) {
+        //     System.out.println("=================================================================");
+        //     for (Student student : studentGroup) {
+        //         System.out.println(student);
+        //     }
+        // }
 
     }
 }

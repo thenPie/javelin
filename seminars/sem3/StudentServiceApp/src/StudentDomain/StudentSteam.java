@@ -7,6 +7,10 @@ public class StudentSteam implements Iterable<StudentGroup> {
 
     private List<StudentGroup> groups;
 
+    public List<StudentGroup> getSteam() {
+        return groups;
+    }
+
     public StudentSteam(List<StudentGroup> groups) {
         this.groups = groups;
     }
@@ -32,7 +36,5 @@ public class StudentSteam implements Iterable<StudentGroup> {
 
         };
     }
-
-
     
 }

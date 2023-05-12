@@ -6,13 +6,19 @@ import java.util.List;
 public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
     
     private List<Student> students;
+    private String name;
     
-    public StudentGroup(List<Student> students) {
+    public StudentGroup(List<Student> students, String name) {
         this.students = students;
+        this.name = name;
     }
 
     public List<Student> getStudents() {
         return students;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setStudents(List<Student> students) {
