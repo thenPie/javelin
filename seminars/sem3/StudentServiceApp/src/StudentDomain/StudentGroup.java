@@ -48,16 +48,15 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
 
     @Override
     public int compareTo(StudentGroup o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
 
-        // if (condition) {
-        //     return 0;
-        // }
-        // if (condition) {
-        //     return -1;
-        // }
-        // return 1;
+        if (getStudents().size() == o.getStudents().size()) {
+            return 0;
+        }
+        if (getStudents().size() < o.getStudents().size()) {
+            return -1;
+        }
+        return 1;
+
     }
 
 }

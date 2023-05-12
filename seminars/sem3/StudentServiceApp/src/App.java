@@ -9,27 +9,26 @@ import StudentDomain.StudentSteam;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Student st1 = new Student("St1", "one", 20, 106L);
-        Student st2 = new Student("St1", "two", 30, 203L);
-        Student st3 = new Student("St1", "three", 20, 524L);
-        Student st4 = new Student("St1", "four", 15, 381L);
-        Student st5 = new Student("St2", "five", 20, 107L);
-        Student st6 = new Student("St2", "six", 30, 206L);
-        Student st7 = new Student("St2", "seven", 20, 534L);
-        Student st8 = new Student("St3", "eight", 20, 564L);
+        Student st1 = new Student("St", "one", 20, 106L);
+        Student st2 = new Student("St", "two", 30, 203L);
+        Student st3 = new Student("St", "three", 20, 524L);
+        Student st4 = new Student("St", "four", 15, 381L);
+        Student st5 = new Student("St", "five", 20, 107L);
+        Student st6 = new Student("St", "six", 30, 206L);
+        Student st7 = new Student("St", "seven", 20, 534L);
+        Student st8 = new Student("St", "eight", 20, 564L);
 
         List<Student> lStudents1 = new ArrayList<Student>();
-        lStudents1.add(st1);
-        lStudents1.add(st2);
-        lStudents1.add(st3);
-        lStudents1.add(st4);
-
         List<Student> lStudents2 = new ArrayList<Student>();
+        List<Student> lStudents3 = new ArrayList<Student>();
+        
+        lStudents1.add(st1);
+        lStudents3.add(st2);
+        lStudents3.add(st3);
+        lStudents2.add(st4);
         lStudents2.add(st5);
         lStudents2.add(st6);
-        lStudents2.add(st7);
-
-        List<Student> lStudents3 = new ArrayList<Student>();
+        lStudents3.add(st7);
         lStudents3.add(st8);
 
         StudentGroup gr1 = new StudentGroup(lStudents1);
@@ -44,9 +43,14 @@ public class App {
         StudentSteam steam1 = new StudentSteam(grs);
 
         for (StudentGroup studentGroup : steam1) {
+            System.out.println("=================================================================");
             for (Student student : studentGroup) {
                 System.out.println(student);
             }
+        }
+        
+        for (StudentGroup studentGroup : steam1) {
+            Collections.sort(studentGroup.getStudents());
         }
 
     }
