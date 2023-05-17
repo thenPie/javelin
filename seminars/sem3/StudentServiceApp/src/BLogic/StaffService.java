@@ -26,7 +26,7 @@ public class StaffService implements iUserService<Staff> {
         staffList.add(per);
     }
 
-    //    public List<Staff> getAllStaffList() {
+//        public List<Staff> getAllStaffList() {
 //        return staffList;
 //    }
 }
