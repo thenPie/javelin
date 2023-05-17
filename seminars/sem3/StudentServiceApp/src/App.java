@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import StudentDomain.Student;
-import StudentDomain.StudentGroup;
-import StudentDomain.StudentSteam;
+import Domain.Student;
+import Domain.StudentGroup;
+import Domain.StudentSteam;
 
 public class App {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package StudentDomain;
+package Domain;
 
 public class User {
     

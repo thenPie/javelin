@@ -1,4 +1,6 @@
-package StudentDomain;
+package Domain;
+
+// work in progress
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +8,12 @@ import java.util.List;
 public class Teacher extends User {
 
     private Long id;
+    private String degree;
     private static List<Long> idTeacher = new ArrayList<>();
     
-    public Teacher(String lastName, String firstName, Integer age, Long id) {
+    public Teacher(String lastName, String firstName, Integer age, Long id, String degree) {
         super(lastName, firstName, age);
+        this.degree = degree;
 
         /**
          * Check if ID already exists.
@@ -31,8 +35,16 @@ public class Teacher extends User {
         this.id = id;
     }
 
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public String getDegree() {
+        return degree;
     }
 
     public static List<Long> getIdTeacher() {
