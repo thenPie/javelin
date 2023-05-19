@@ -2,6 +2,7 @@ package BLogic;
 
 import Domain.Staff;
 import Domain.Student;
+import Domain.UserComparator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,9 @@ public class StaffService implements iUserService<Staff> {
         staffList.add(per);
     }
 
-//        public List<Staff> getAllStaffList() {
-//        return staffList;
-//    }
+    public List<Staff> getStaffSortedByInitials() {
+        List<Staff> staff = new ArrayList<>(staffList);
+        staff.sort(new UserComparator<Staff>());
+        return staff;
+    }
 }
