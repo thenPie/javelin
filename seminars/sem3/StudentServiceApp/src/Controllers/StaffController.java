@@ -13,7 +13,7 @@ public class StaffController implements iUserController<Staff> {
     }
 
     static public <E extends Staff> void paySalary(E person) {
-        System.out.println(((User)person).getFirstName() + " получил зп 10k");
+        System.out.println(person.getFirstName() + " получил зп 10k");
     }
 
     static public <E extends Number> Double mean(E[] num) {

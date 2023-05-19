@@ -2,8 +2,9 @@ package Controllers;
 
 import BLogic.StudentGroupService;
 import BLogic.StudentService;
+import Domain.Student;
 
-public class StudentController implements iUserController {
+public class StudentController implements iUserController<Student> {
     private final StudentService dataService = new StudentService();
     private final StudentGroupService groupService = new StudentGroupService();
 

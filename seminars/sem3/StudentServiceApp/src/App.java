@@ -3,81 +3,49 @@ import java.util.Collections;
 import java.util.List;
 
 import Controllers.StaffController;
-import Domain.Staff;
-import Domain.Student;
-import Domain.StudentGroup;
-import Domain.StudentSteam;
+import Controllers.StudentController;
+import Domain.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-//        Student st1 = new Student("St", "one", 20, 106L);
-//        Student st2 = new Student("St", "two", 30, 203L);
-//        Student st3 = new Student("St", "three", 20, 524L);
-//        Student st4 = new Student("St", "four", 15, 381L);
-//        Student st5 = new Student("St", "five", 20, 107L);
-//        Student st6 = new Student("St", "six", 30, 206L);
-//        Student st7 = new Student("St", "seven", 20, 534L);
-//        Student st8 = new Student("St", "eight", 20, 564L);
-//
-//        List<Student> lStudents1 = new ArrayList<Student>();
-//        List<Student> lStudents2 = new ArrayList<Student>();
-//        List<Student> lStudents3 = new ArrayList<Student>();
-//
-//        lStudents1.add(st1);
-//        lStudents1.add(st2);
-//        lStudents1.add(st3);
-//        lStudents1.add(st4);
-//        lStudents1.add(st5);
-//        lStudents2.add(st6);
-//        lStudents3.add(st7);
-//        lStudents3.add(st8);
-//
-//        StudentGroup gr1 = new StudentGroup(lStudents1, "1group1");
-//        StudentGroup gr2 = new StudentGroup(lStudents2, "2group2");
-//        StudentGroup gr3 = new StudentGroup(lStudents3, "3group3");
-//
-//        List<StudentGroup> grs = new ArrayList<StudentGroup>();
-//        grs.add(gr1);
-//        grs.add(gr2);
-//        grs.add(gr3);
-//
-//        StudentSteam steam1 = new StudentSteam(grs);
-//
-//        for (StudentGroup studentGroup : steam1) {
-//            System.out.println("=================================================================" + studentGroup.getName());
-//            for (Student student : studentGroup) {
-//                System.out.println(student);
-//            }
-//        }
-//
-//        System.out.println();
-//        Collections.sort(steam1.getSteam());
-//
-//        for (StudentGroup studentGroup : steam1) {
-//            System.out.println("=================================================================" + studentGroup.getName());
-//            for (Student student : studentGroup) {
-//                System.out.println(student);
-//            }
-//        }
+        Student s1 = new Student("", "", 10, 1L);
+        Student s2 = new Student("", "", 20, 2L);
+        Student s3 = new Student("", "", 30, 3L);
+        Student s4 = new Student("", "", 40, 4L);
 
-        Staff staff1 = new Staff("Lasty", "Namey", 26, 23);
-        Student st1 = new Student("St", "one", 20, 106L);
+        Teacher t1 = new Teacher("", "", 33, 1L, "");
+        Teacher t2 = new Teacher("", "", 22, 2L, "");
+        Teacher t3 = new Teacher("", "", 44, 3L, "");
+        Teacher t4 = new Teacher("", "", 55, 4L, "");
 
-//        StaffController sc = new StaffController();
-//        sc.paySalary(staff1);
-//        sc.paySalary(st1);
+        Staff st1 = new Staff("", "", 10, 1);
+        Staff st2 = new Staff("", "", 20, 1);
+        Staff st3 = new Staff("", "", 54, 1);
+        Staff st4 = new Staff("", "", 23, 1);
 
-        StaffController.paySalary(staff1);
-//        StaffController.paySalary(st1);
+        List<Student> students = new ArrayList<>();
+        List<Teacher> teachers = new ArrayList<>();
+        List<Staff> staffList = new ArrayList<>();
 
-        Integer[] studHours = {123, 1324, 12342, 12, 23, 2};
-        System.out.println(StaffController.mean(studHours));
+        students.add(s1);
+        students.add(s2);
+        students.add(s3);
+        students.add(s4);
 
-        Double[] staffSalary = {12555.23, 34123.54, 10000.0};
-        System.out.println(StaffController.mean(staffSalary));
+        teachers.add(t1);
+        teachers.add(t2);
+        teachers.add(t3);
+        teachers.add(t4);
 
+        staffList.add(st1);
+        staffList.add(st2);
+        staffList.add(st3);
+        staffList.add(st4);
 
+        System.out.println(AverageAge.getAvgAge(students));
+        System.out.println(AverageAge.getAvgAge(teachers));
+        System.out.println(AverageAge.getAvgAge(staffList));
 
     }
 }
